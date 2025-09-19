@@ -1,0 +1,37 @@
+# --- Carpetas de Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# --- Entornos virtuales ---
+venv/
+ENV/
+env/
+.venv/
+
+# --- Archivos temporales ---
+*.log
+*.tmp
+*.swp
+*.bak
+*.~*
+
+# --- Archivos de Jupyter Notebook ---
+.ipynb_checkpoints
+
+# --- Configuración de IDEs ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Archivos del sistema ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Compilaciones / distribuciones ---
+build/
+dist/
+*.egg-info/
