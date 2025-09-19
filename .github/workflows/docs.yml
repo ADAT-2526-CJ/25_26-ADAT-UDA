@@ -3,14 +3,14 @@ name: Generar documentación pydoc
 on:
   push:
     branches:
-      - main  # o master, según la rama que uses
+      - main   # cámbialo a master si tu rama por defecto es master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Descargar tu repositorio
+      # 1. Descargar el repo
       - name: Checkout del repo
         uses: actions/checkout@v3
 
@@ -24,11 +24,14 @@ jobs:
       - name: Generar docs con pydoc
         run: |
           mkdir -p docs
-          for file in $(find . -name "*.py"); do
-            nombre=$(basename "$file" .py)
-            python -m pydoc -w "$file"
-            mv "$nombre.html" docs/
+          # Recorre todos los .py dentro de carpetas tipo UD*
+          for file in $(find . -type f -name "*.py"); do
+            module=$(echo "$file" | sed 's|^\./||;s|/|.|g;s|.py$||')
+            echo "Generando doc para módulo: $module"
+            python -m pydoc -w "$module" || true
           done
+          # Mover todos los HTML generados a /docs
+          mv *.html docs/ || true
 
       # 4. Publicar en GitHub Pages
       - name: Deploy a GitHub Pages
