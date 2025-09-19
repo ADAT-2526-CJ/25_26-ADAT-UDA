@@ -3,9 +3,11 @@ name: Generar documentación pydoc
 on:
   push:
     branches:
-      - main   # cámbialo a master si tu rama por defecto es master
+      - main   # cámbialo a master si tu rama principal es master
+
 permissions:
-  contents: write
+  contents: write   # 🔑 necesario para que el bot pueda hacer push a gh-pages
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,14 +27,13 @@ jobs:
       - name: Generar docs con pydoc
         run: |
           mkdir -p docs
-          # Recorre todos los .py dentro de carpetas tipo UD*
           for file in $(find . -type f -name "*.py"); do
             module=$(echo "$file" | sed 's|^\./||;s|/|.|g;s|.py$||')
             echo "Generando doc para módulo: $module"
             python -m pydoc -w "$module" || true
           done
-          # Mover todos los HTML generados a /docs
           mv *.html docs/ || true
+          touch docs/.nojekyll   # 👈 evita que GitHub Pages use Jekyll
 
       # 4. Publicar en GitHub Pages
       - name: Deploy a GitHub Pages
