@@ -33,14 +33,14 @@ jobs:
             python -m pydoc -w "$module" || true
           done
           mv *.html docs/ || true
-          touch docs/.nojekyll   # evita que GitHub Pages intente usar Jekyll
+          touch docs/.nojekyll   # Evita que GitHub Pages intente usar Jekyll
 
       # 4. Crear un index.html con enlaces a todos los docs
       - name: Generar index.html
         run: |
           echo "<!DOCTYPE html>" > docs/index.html
           echo "<html><head><meta charset='UTF-8'><title>Documentación ADAT</title></head><body>" >> docs/index.html
-          echo "<h1>📘 Documentación generada con pydoc</h1>" >> docs/index.html
+          echo "<h1>Documentación generada con pydoc</h1>" >> docs/index.html
           echo "<ul>" >> docs/index.html
           for file in docs/*.html; do
             nombre=$(basename "$file")
