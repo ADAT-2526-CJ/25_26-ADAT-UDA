@@ -6,7 +6,7 @@ on:
       - main   # cámbialo a master si tu rama principal es master
 
 permissions:
-  contents: write   # 🔑 necesario para que el bot pueda hacer push a gh-pages
+  contents: write   # 🔑 necesario para publicar en gh-pages
 
 jobs:
   build:
@@ -33,11 +33,9 @@ jobs:
             python -m pydoc -w "$module" || true
           done
           mv *.html docs/ || true
-          touch docs/.nojekyll   # 👈 evita que GitHub Pages use Jekyll
+          touch docs/.nojekyll   # 👈 evita que GitHub Pages intente usar Jekyll
 
-      # 4. Publicar en GitHub Pages
-      - name: Deploy a GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+      # 4. Crear un index.html con enlaces a todos los docs
+      - name: Generar index.html
+        run: |
+          echo "<!DOCTYPE h
