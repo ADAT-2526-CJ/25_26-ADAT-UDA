@@ -1,4 +1,8 @@
-# --- Ignorar ---
+# --- Ignorar --
+UD1_Python/ejercicios.py
+UD1_Python/ejercicio06.py
+UD1_Python/ejercicio07.py
+UD1_Python/ejercicio08.py
 
 # --- Carpetas de Python ---
 __pycache__/
