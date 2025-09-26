@@ -3,21 +3,18 @@ UD1_Python/ejercicios.py
 UD1_Python/ejercicio06.py
 UD1_Python/ejercicio07.py
 UD1_Python/ejercicio08.py
+UD1_Python/ejercicio09.py
+
+.github/workflows/tests.yml
 
 # --- Carpetas de Python ---
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-
-ChatGPT Plus
-
-Muy bien 👍 ya tienes un .gitignore bastante completo (para Python).
-Lo único es que si ahora también usas Maven/Java, te interesa ampliarlo un poco para cubrir lo que genera Maven y lo específico de Java.
-
-🔧 Extensión de tu .gitignore actual para Maven/Java
-
-Puedes añadir al final estas líneas:
+.pytest_cache/
+.pyre/
+.pytype/
 
 # --- Maven ---
 target/
