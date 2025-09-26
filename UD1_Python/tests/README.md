@@ -68,12 +68,17 @@ Ejecuta **siempre desde la raíz del repositorio** (`25_26-ADAT-XXX`).
 
 ### 🔹 Ejercicio 6 – Criptógrafo
 ```bash
-python -m pytest UD1_Python/tests/test_criptografo.py -v --conftest=UD1_Python/tests/conftest_criptografo.py
+python -m pytest UD1_Python/tests/test_criptografo.py -v 
+or
+python -m pytest -s UD1_Python/tests/test_criptografo.py -v
 ```
 
 ### 🔹 Ejercicios 7–8 – Persona
 ```bash
-python -m pytest UD1_Python/tests/test_persona.py -v --conftest=UD1_Python/tests/conftest_persona.py
+python -m pytest UD1_Python/tests/test_persona.py -v 
+or
+python -m pytest -s UD1_Python/tests/test_persona.py -v
+
 ```
 ---
 
