@@ -11,8 +11,8 @@ import pytest
 MODULOS = [
     "UD1_Python.ejercicio06",
     "UD1_Python.ejercicio07",
-    #"UD1_Python.ejercicio08",
-    #"UD1_Python.ejercicio09",
+    "UD1_Python.ejercicio08",
+    "UD1_Python.ejercicio09",
 ]
 
 
