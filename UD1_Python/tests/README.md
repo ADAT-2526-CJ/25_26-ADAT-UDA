@@ -58,9 +58,7 @@ UD1_Python/
 ├── ejercicio8.py
 └── tests/
     ├── test_criptografo.py         # Tests del Ejercicio 6
-    ├── conftest_criptografo.py     # Configuración de nota para Ej6
     ├── test_persona.py             # Tests de los Ejercicios 7–8
-    └── conftest_persona.py         # Configuración de nota para Ej7–8
 ```
 ---
 
