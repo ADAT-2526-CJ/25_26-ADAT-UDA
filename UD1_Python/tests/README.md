@@ -150,7 +150,9 @@ python -m pytest UD1_Python/tests/ -v -s
 python -m pylint UD1_Python
 python -m pre_commit run --hook-stage push --all-files
 ```
-## 🔹 Hooks pre-push (control de calidad automático)
+
+
+# Hooks pre-push (control de calidad automático)
 
 Este repositorio utiliza **[pre-commit](https://pre-commit.com/)** para añadir un hook en Git que se ejecuta **antes de cada `git push`**.  
 El objetivo es garantizar que no se sube código que no pase los checks básicos.

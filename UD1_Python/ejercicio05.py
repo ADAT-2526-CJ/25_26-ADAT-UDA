@@ -75,12 +75,6 @@ def pedir_impares():
 
 
 def mostrar_menu(numeros):
-    """
-    Muestra un menú para operar con la lista de números usando funciones.
-
-    Args:
-        numeros (list[int]): Lista de números impares.
-    """
     while True:
         print("\n¿Qué desea hacer con la lista?")
         print("1. Sumatorio")
