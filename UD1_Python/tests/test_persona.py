@@ -3,7 +3,7 @@ Tests con pytest para la clase Persona (Ejercicios 7 y 8).
 Cada test muestra feedback directo.
 """
 
-from ejercicio07 import Persona
+from UD1_Python.ejercicio07 import Persona
 
 
 def test_mayor_de_edad():
