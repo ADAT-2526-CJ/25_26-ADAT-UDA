@@ -1,0 +1,30 @@
+# Qué comprueba
+# * Docstrings obligatorios en módulos, clases y funciones.
+# * Variables definidas y usadas (unused-variable, undefined-variable).
+# * Evita sentencias inútiles (pointless-statement).
+# * Señala duplicación de código (duplicate-code).
+
+
+[MASTER]
+# Desactiva todo por defecto
+disable=all
+ignore=tests,UD0_Docker
+# Activamos únicamente lo que nos interesa
+enable=
+    missing-docstring,
+    unused-variable,
+    undefined-variable,
+    pointless-statement,
+
+[MESSAGES CONTROL]
+# missing-docstring se desglosa en:
+# - missing-module-docstring
+# - missing-class-docstring
+# - missing-function-docstring
+
+[REPORTS]
+# Evita que pylint saque la "nota" global del código
+# score=no
+
+[FORMAT]
+max-line-length=120

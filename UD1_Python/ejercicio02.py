@@ -3,9 +3,8 @@ Ejercicio 2 – Lista de números sumatorio y la media
 Alumno/a: Urtzi Diaz Arberas
 Unidad Didáctica: UD1 - Python
 
-Este programa modifica el programa anterior, de manera que al terminar de guardar los números en la lista
-se impriman la lista, el sumatorio y la media de todos los número de dicha lista.
-
+Este programa modifica el programa anterior, de manera que al terminar de guardar los números
+en la lista se impriman la lista, el sumatorio y la media de todos los número de dicha lista.
 """
 
 def pedir_numeros():

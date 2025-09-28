@@ -1,4 +1,4 @@
-# Tests automáticos – UD1 (Python)
+# Tests automáticos local – UD1 (Python)
 
 Este repositorio incluye los ejercicios de la **UD1 de Python** junto con **agunos tests automáticos** para validar tu código y obtener **feedback inmediato**.
 
@@ -103,3 +103,50 @@ Durante la ejecución, cada test muestra:
 
 **En resumen**:  
 Los tests no son un obstáculo, sino una herramienta que te permite **aprender de tus errores**, mejorar la calidad de tu código y adquirir una práctica profesional clave en el desarrollo de software.
+
+# Automatización de tests y revisión de código en GitHub Actions
+
+Este repositorio integra dos tipos de comprobaciones automáticas:
+
+1. **Tests con pytest**: validan la funcionalidad de los ejercicios.  
+2. **Linter con pylint**: revisa la documentación (docstrings) y algunas reglas básicas de calidad de código.
+
+---
+
+## 1) Cómo funciona
+
+Cada vez que se hace `git push` o un Pull Request hacia `main`:
+
+- **Pytest** se ejecuta automáticamente sobre los tests de `UD1_Python/tests/`.  
+  - Si un test falla, el flujo se marca como fallido y no se puede mergear.  
+- **Pylint** revisa el código de `UD1_Python/` usando el archivo de configuración `.pylintrc`.  
+  - Señala la ausencia de docstrings o problemas básicos de código.  
+  - Este paso se ejecuta en modo "no bloqueante": los avisos aparecen en los logs pero no impiden hacer merge.
+
+---
+
+## 2) Configuración de pylint
+
+El archivo `.pylintrc` está en la raíz del repositorio.  
+Se ha configurado para que:
+
+- **Sea obligatorio documentar** módulos, clases y funciones con docstrings (según PEP 257).  
+- Revise errores básicos como:
+  - Variables definidas pero no usadas.
+  - Variables usadas sin definir.
+  - Sentencias inútiles.
+  - Código duplicado.  
+- Ignore convenciones de estilo estrictas (longitud de línea, nombres de variables, etc.).
+
+De esta forma se obtiene una validación **profesional pero manejable**.
+
+---
+
+## 3) Ejecución en local
+
+Puedes ejecutar los mismos análisis que en GitHub Actions en tu ordenador:
+
+```bash
+python -m pytest UD1_Python/tests/ -v -s
+python -m pylint UD1_Python
+
