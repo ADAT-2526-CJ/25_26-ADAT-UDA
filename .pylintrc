@@ -2,7 +2,6 @@
 # * Docstrings obligatorios en módulos, clases y funciones.
 # * Variables definidas y usadas (unused-variable, undefined-variable).
 # * Evita sentencias inútiles (pointless-statement).
-# * Señala duplicación de código (duplicate-code).
 
 
 [MASTER]
