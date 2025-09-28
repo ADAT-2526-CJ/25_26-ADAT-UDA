@@ -37,5 +37,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          # Añadimos el repo raíz al PYTHONPATH para que pytest encuentre UD1_Python
-          PYTHONPATH=. python -m pytest UD1_Python/tests -v -s
+            PYTHONPATH=. python -m pytest UD1_Python/tests -v -s
