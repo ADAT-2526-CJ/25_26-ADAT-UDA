@@ -36,6 +36,5 @@ jobs:
           python -m pylint UD1_Python
 
       - name: Run Tests
-        run: |
-                PYTHONPATH=. python -m pytest -v -s
+        run: python -m pytest -v -s
                 # -v para salida detallada, -s para ver la salida estándar (print)
