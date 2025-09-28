@@ -7,8 +7,6 @@ UD1_Python/ejercicio07.py
 UD1_Python/ejercicio08.py
 UD1_Python/ejercicio09.py
 
-.github/workflows/tests.yml
-
 # --- Carpetas de Python ---
 __pycache__/
 *.py[cod]

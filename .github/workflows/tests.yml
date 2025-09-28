@@ -1,0 +1,57 @@
+name: Tests + Linter (UD1)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # -------------------------------
+  # Job 1: Tests con pytest
+  # -------------------------------
+  tests:
+    runs-on: ubuntu-latest
+    name: "Ejecutar tests con pytest"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Ejecutar tests
+        run: |
+          python -m pytest UD1_Python/tests/ -v -s
+
+  # -------------------------------
+  # Job 2: Linter con pylint
+  # -------------------------------
+  pylint:
+    runs-on: ubuntu-latest
+    name: "Revisar docstrings y calidad de código"
+    continue-on-error: true   # Esto hace que warnings de pylint no bloqueen el merge
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Instalar pylint
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint
+
+      - name: Ejecutar pylint
+        run: |
+          pylint UD1_Python/ --disable=R,C
