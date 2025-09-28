@@ -37,4 +37,5 @@ jobs:
 
       - name: Run Tests
         run: |
-            PYTHONPATH=. python -m pytest UD1_Python/tests -v -s
+                PYTHONPATH=. python -m pytest -v -s
+                # -v para salida detallada, -s para ver la salida estándar (print)
