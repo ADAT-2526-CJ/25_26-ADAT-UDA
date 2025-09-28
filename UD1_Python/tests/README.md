@@ -7,7 +7,6 @@ Este repositorio incluye los ejercicios de la **UD1 de Python** junto con **agun
 ## 1) Requisitos previos
 
 Necesitas:
-
 - **Python 3.11** o superior.  
 - El paquete [`pytest`](https://docs.pytest.org/).
 
@@ -142,11 +141,42 @@ De esta forma se obtiene una validación **profesional pero manejable**.
 
 ---
 
-## 3) Ejecución en local
+## 3) Ejecución en local pre-commit
 
 Puedes ejecutar los mismos análisis que en GitHub Actions en tu ordenador:
 
 ```bash
 python -m pytest UD1_Python/tests/ -v -s
 python -m pylint UD1_Python
+python -m pre_commit run --hook-stage push --all-files
+```
+## 🔹 Hooks pre-push (control de calidad automático)
+
+Este repositorio utiliza **[pre-commit](https://pre-commit.com/)** para añadir un hook en Git que se ejecuta **antes de cada `git push`**.  
+El objetivo es garantizar que no se sube código que no pase los checks básicos.
+
+### Qué comprueba
+- **Pylint** → analiza el código con las reglas definidas en [`.pylintrc`](./.pylintrc).  
+- **Pytest** → ejecuta los tests en `UD1_Python/tests/`.  
+
+Si alguno falla, **el push se cancela automáticamente**.
+
+### Instalación del hook
+1. Instalar la herramienta:
+```bash
+pip install pre-commit
+```
+2. Activar el hook en tu repo:
+```bash
+python -m pre_commit install --hook-type pre-push
+```
+
+### Uso
+- Los hooks se ejecutan de forma automática en cada `git push`.  
+- Para ejecutarlos manualmente sobre todo el código:
+  ```bash
+  python -m pre_commit run --hook-stage push --all-files
+  ```
+
+
 
