@@ -1,13 +1,12 @@
 # --- Ignorar --
 UD0_Docker/
-UD0_Docker/*
+UD0_Docker/*git 
 UD1_Python/ejercicios.py
 UD1_Python/Ejercicios/ejercicio06.py
 UD1_Python/Ejercicios/ejercicio07.py
 UD1_Python/Ejercicios/ejercicio08.py
 UD1_Python/Ejercicios/ejercicio09.py
-UD1_Python/Practica_Vigenere/src/main.py
-
+UD1_Python/Practica_Vigenere/src/vigenere.py
 # --- Carpetas de Python ---
 __pycache__/
 *.py[cod]
