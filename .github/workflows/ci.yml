@@ -29,5 +29,5 @@ jobs:
     - name: Run linter
       run: python -m pylint UD1_Python/Ejercicios
 
-    - name: Run tests
-      run: python -m pytest -v -s
+    - name: Run tests Ejercicios
+      run: python -m pytest UD1_Python/Ejercicios/tests/ -v -s
