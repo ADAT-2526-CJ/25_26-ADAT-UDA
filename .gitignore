@@ -9,7 +9,8 @@ UD1_Python/ejercicio09.py
 UD1_Python/ejercicio10.py
 UD1_Python/ejercicio11.py
 UD1_Python/ejercicio12.py
-UD1_Python/Practica_Vigenere/src/vigenere.py
+UD1_Python/Practica_Vigenere/src/main.py
+
 # --- Carpetas de Python ---
 __pycache__/
 *.py[cod]
