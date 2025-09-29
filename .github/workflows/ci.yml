@@ -2,39 +2,32 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
-      - develop
-      - master
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
-      - develop
-      - master
+    branches: [ main ]
 
 jobs:
-  lint-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pylint pytest
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pylint pre-commit
 
-      - name: Run Pylint
-        run: |
-          # Usa la configuración de .pylintrc
-          python -m pylint UD1_Python
+    - name: Install package
+      run: pip install -e .
 
-      - name: Run Tests
-        run: python -m pytest -v -s
-                # -v para salida detallada, -s para ver la salida estándar (print)
+    - name: Run linter
+      run: python -m pylint UD1_Python/Ejercicios
+
+    - name: Run tests
+      run: python -m pytest -v -s
