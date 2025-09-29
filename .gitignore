@@ -2,13 +2,10 @@
 UD0_Docker/
 UD0_Docker/*
 UD1_Python/ejercicios.py
-UD1_Python/ejercicio06.py
-UD1_Python/ejercicio07.py
-UD1_Python/ejercicio08.py
-UD1_Python/ejercicio09.py
-UD1_Python/ejercicio10.py
-UD1_Python/ejercicio11.py
-UD1_Python/ejercicio12.py
+UD1_Python/Ejercicios/ejercicio06.py
+UD1_Python/Ejercicios/ejercicio07.py
+UD1_Python/Ejercicios/ejercicio08.py
+UD1_Python/Ejercicios/ejercicio09.py
 UD1_Python/Practica_Vigenere/src/main.py
 
 # --- Carpetas de Python ---
