@@ -1,5 +1,6 @@
 import pytest
-from UD1_Python.Practica_Vigenere.src.main import cifrar_vigenere, descifrar_vigenere
+
+from UD1_Python.Practica_Vigenere.src.vigenere import cifrar_vigenere, descifrar_vigenere
 
 def test_cifrado_y_descifrado():
     texto = "ATAQUE"
