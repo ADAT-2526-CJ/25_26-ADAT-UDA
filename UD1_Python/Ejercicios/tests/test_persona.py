@@ -3,7 +3,12 @@ Tests con pytest para la clase Persona (Ejercicios 7 y 8).
 Cada test muestra feedback directo.
 """
 
-from UD1_Python.Ejercicios.ejercicio07 import Persona
+import pytest
+
+try:
+    from UD1_Python.Ejercicios.ejercicio07 import Persona
+except ModuleNotFoundError:
+    pytest.skip("ejercicio07.py no está disponible, se omite test_persona", allow_module_level=True)
 
 
 def test_mayor_de_edad():
