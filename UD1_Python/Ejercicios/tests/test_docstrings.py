@@ -11,10 +11,10 @@ import pytest
 
 # Módulos de la UD1 a revisar
 MODULOS = [
-    "UD1_Python.ejercicio06",
-    "UD1_Python.ejercicio07",
-    "UD1_Python.ejercicio08",
-    "UD1_Python.ejercicio09",
+    "UD1_Python.Ejercicios.ejercicio06",
+    "UD1_Python.Ejercicios.ejercicio07",
+    "UD1_Python.Ejercicios.ejercicio08",
+    "UD1_Python.Ejercicios.ejercicio09",
 ]
 
 

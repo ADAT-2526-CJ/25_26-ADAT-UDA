@@ -3,7 +3,7 @@ Tests con pytest para la clase Criptografo (Ejercicio 6).
 Cada test muestra feedback directo.
 """
 
-from UD1_Python.ejercicio06 import Criptografo
+from UD1_Python.Ejercicios.ejercicio06 import Criptografo
 
 def test_encriptar_desplazamiento_simple():
     """Prueba básica de encriptación con desplazamiento ASCII.'ABC' debería encriptarse como 'BCD'.
