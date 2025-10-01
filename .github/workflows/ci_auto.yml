@@ -1,0 +1,74 @@
+name: Python CI  
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      # Cambia este valor según la práctica que corresponda
+      PRACTICA: UD1_Python/Practica_Vigenere
+
+    steps:
+      # 1) Descargar el código del repo (alumno o central)
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # 2) Si el workflow se está ejecutando en un repo de alumno:
+      #    → Descargar los tests oficiales desde tu repo central
+      - name: Descargar tests oficiales de la práctica
+        if: github.repository != 'TU-USUARIO/25_26-ADAT-UDA'
+        run: |
+          # Clonamos el repo central pero sin checkout completo
+          git clone --no-checkout https://github.com/TU-USUARIO/25_26-ADAT-UDA tmp_tests
+          
+          # Entramos al repo temporal
+          cd tmp_tests
+          
+          # Activamos sparse-checkout para bajar solo una carpeta
+          git sparse-checkout init --cone
+          
+          # Seleccionamos solo la carpeta de tests de la práctica actual
+          git sparse-checkout set $PRACTICA/tests
+          
+          # Descargamos esa parte
+          git checkout
+          
+          # Nos aseguramos de que exista la carpeta tests en el repo del alumno
+          mkdir -p tests
+          
+          # Copiamos los tests oficiales a la carpeta tests del alumno
+          cp -r $PRACTICA/tests/* ../tests/
+
+      # 3) Si el workflow se ejecuta en TU repo central:
+      #    → No hace falta clonar, ya tienes los tests en local
+      - name: Usar tests locales (solo en repo central)
+        if: github.repository == 'TU-USUARIO/25_26-ADAT-UDA'
+        run: |
+          echo "Usando los tests locales del repo central"
+
+      # 4) Instalar Python en la máquina virtual de GitHub Actions
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      # 5) Instalar dependencias necesarias para tests y linter
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pylint
+
+      # 6) Ejecutar el linter para comprobar estilo y buenas prácticas
+      - name: Run linter
+        run: pylint src
+
+      # 7) Ejecutar los tests oficiales con detalle (-v) y mostrando prints (-s)
+      - name: Run tests
+        run: pytest -v -s
