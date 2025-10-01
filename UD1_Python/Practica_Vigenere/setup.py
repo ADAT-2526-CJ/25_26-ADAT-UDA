@@ -6,22 +6,24 @@ from cx_Freeze import setup, Executable
 import sys
 import os
 
-# Opciones de compilación
+# Ruta absoluta de este setup.py
+base_path = os.path.dirname(__file__)
+
 build_exe_options = {
     "packages": [],
-    "excludes": ["tkinter"],       # excluir si no lo usas
-    "include_files": ["data/"],    # incluir la carpeta data dentro del ejecutable
+    "excludes": ["tkinter"],
+    "include_files": [(os.path.join(base_path, "data"), "data")],
 }
 
-# Detectar si es Windows para GUI (sin ventana de consola)
 base = None
 if sys.platform == "win32":
-    base = None  # o "Win32GUI" si no quieres que se abra consola
+    base = None  # o "Win32GUI" si no quieres consola
 
 setup(
-    name="Vigenere",
+    name="Vigenere UDA",
+    author="Urtzi Diaz Arberas",
     version="1.0",
-    description="Cifrado y descifrado con el algoritmo de Vigenère",
+    description="Cifrado y descifrado con el algoritmso de Vigenère",
     options={"build_exe": build_exe_options},
-    executables=[Executable("src/vigenere.py", base=base)]
+    executables=[Executable(os.path.join(base_path, "src", "vigenere.py"), base=base)]
 )
