@@ -20,6 +20,7 @@ MODULOS = [
 
 @pytest.mark.parametrize("modname", MODULOS)
 def test_docstring_modulo(modname):
+    """El módulo debe tener un docstring válido."""
     try:
         modulo = importlib.import_module(modname)
     except ModuleNotFoundError:

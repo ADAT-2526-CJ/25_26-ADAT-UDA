@@ -4,6 +4,8 @@ UD0_Docker/*git
 UD1_Python/ejercicios.py
 UD1_Python/Practica_Vigenere/src/main.py
 UD1_Python/Practica_Vigenere/src/vigenere.py
+.github/workflows/ci_practica.yml
+
 
 # --- Carpetas de Python ---
 __pycache__/
