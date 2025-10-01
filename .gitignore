@@ -2,10 +2,11 @@
 UD0_Docker/
 UD0_Docker/*git 
 UD1_Python/ejercicios.py
-UD1_Python/Practica_Vigenere/src/main.py
+# - Practica_Vigenere -
 UD1_Python/Practica_Vigenere/src/vigenere.py
-.github/workflows/ci_practica.yml
-
+.github/workflows/ci_auto.yml
+UD1_Python/Practica_Vigenere/data/mensaje_descifrado.txt
+UD1_Python/Practica_Vigenere/data/mensaje_cifrado.txt
 
 # --- Carpetas de Python ---
 __pycache__/
@@ -72,3 +73,4 @@ desktop.ini
 build/
 dist/
 *.egg-info/
+
