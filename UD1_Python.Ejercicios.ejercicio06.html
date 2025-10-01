@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module UD1_Python.Ejercicios.ejercicio06</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="UD1_Python.html" class="white">UD1_Python</a>.<a href="UD1_Python.Ejercicios.html" class="white">Ejercicios</a>.ejercicio06</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD1_Python/Ejercicios/ejercicio06.py">/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD1_Python/Ejercicios/ejercicio06.py</a></td></tr></table>
+    <p><span class="code">Ejercicio&nbsp;6&nbsp;_&nbsp;Criptografía<br>
+Alumno/a:&nbsp;Urtzi&nbsp;Diaz&nbsp;Arberas<br>
+Unidad&nbsp;Didáctica:&nbsp;UD1&nbsp;-&nbsp;Python<br>
+&nbsp;<br>
+Crea&nbsp;una&nbsp;clase&nbsp;Criptográfo&nbsp;que&nbsp;contenga&nbsp;dos&nbsp;métodos:&nbsp;encriptar&nbsp;y&nbsp;desencriptar.&nbsp;Los&nbsp;dos<br>
+métodos&nbsp;recibirán&nbsp;un&nbsp;texto&nbsp;y&nbsp;devolverán&nbsp;otro&nbsp;texto.&nbsp;El&nbsp;funcionamiento&nbsp;de&nbsp;los&nbsp;métodos&nbsp;es&nbsp;el&nbsp;siguiente:<br>
+◦&nbsp;encriptar(txt):&nbsp;El&nbsp;texto&nbsp;recibido&nbsp;se&nbsp;encriptará&nbsp;sustituyendo&nbsp;cada&nbsp;uno&nbsp;de&nbsp;los<br>
+caracteres&nbsp;por&nbsp;el&nbsp;siguiente&nbsp;caracter&nbsp;según&nbsp;su&nbsp;valor&nbsp;ASCII.<br>
+◦&nbsp;desencriptar(txt):&nbsp;Realizará&nbsp;la&nbsp;acción&nbsp;inversa&nbsp;al&nbsp;metodo&nbsp;anterior,&nbsp;es&nbsp;decir&nbsp;sustituirá<br>
+cada&nbsp;carácter&nbsp;por&nbsp;el&nbsp;anterior&nbsp;según&nbsp;su&nbsp;valor&nbsp;ASCII.<br>
+Nota:&nbsp;Para&nbsp;realizar&nbsp;este&nbsp;ejercicio&nbsp;son&nbsp;muy&nbsp;útiles&nbsp;las&nbsp;funciones&nbsp;ord()&nbsp;y&nbsp;chr().</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="UD1_Python.Ejercicios.ejercicio06.html#Criptografo">Criptografo</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Criptografo">class <strong>Criptografo</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Clase&nbsp;que&nbsp;permite&nbsp;encriptar&nbsp;y&nbsp;desencriptar&nbsp;textos&nbsp;usando&nbsp;el&nbsp;desplazamiento&nbsp;ASCII.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Criptografo-desencriptar"><strong>desencriptar</strong></a>(self, texto)</dt><dd><span class="code">Desencripta&nbsp;el&nbsp;texto&nbsp;recibido&nbsp;sustituyendo&nbsp;cada&nbsp;carácter&nbsp;por&nbsp;el&nbsp;anterior&nbsp;según&nbsp;su&nbsp;valor&nbsp;ASCII.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texto&nbsp;(str):&nbsp;El&nbsp;texto&nbsp;a&nbsp;desencriptar.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;El&nbsp;texto&nbsp;desencriptado.</span></dd></dl>
+
+<dl><dt><a name="Criptografo-encriptar"><strong>encriptar</strong></a>(self, texto)</dt><dd><span class="code">Encripta&nbsp;el&nbsp;texto&nbsp;recibido&nbsp;sustituyendo&nbsp;cada&nbsp;carácter&nbsp;por&nbsp;el&nbsp;siguiente&nbsp;según&nbsp;su&nbsp;valor&nbsp;ASCII.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texto&nbsp;(str):&nbsp;El&nbsp;texto&nbsp;a&nbsp;encriptar.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;El&nbsp;texto&nbsp;encriptado.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Función&nbsp;principal&nbsp;que&nbsp;ejecuta&nbsp;el&nbsp;programa.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None.</span></dd></dl>
+ <dl><dt><a name="-pedir_texto"><strong>pedir_texto</strong></a>()</dt><dd><span class="code">Pide&nbsp;al&nbsp;usuario&nbsp;un&nbsp;texto.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;El&nbsp;texto&nbsp;introducido&nbsp;por&nbsp;el&nbsp;usuario.</span></dd></dl>
+</td></tr></table>
+</body></html>

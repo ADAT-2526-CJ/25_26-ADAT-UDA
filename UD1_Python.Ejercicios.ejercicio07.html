@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module UD1_Python.Ejercicios.ejercicio07</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="UD1_Python.html" class="white">UD1_Python</a>.<a href="UD1_Python.Ejercicios.html" class="white">Ejercicios</a>.ejercicio07</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD1_Python/Ejercicios/ejercicio07.py">/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD1_Python/Ejercicios/ejercicio07.py</a></td></tr></table>
+    <p><span class="code">Ejercicio&nbsp;7&nbsp;_&nbsp;<a href="#Persona">Persona</a><br>
+Alumno/a:&nbsp;Urtzi&nbsp;Diaz&nbsp;Arberas<br>
+Unidad&nbsp;Didáctica:&nbsp;UD1&nbsp;-&nbsp;Python<br>
+&nbsp;<br>
+Módulo&nbsp;que&nbsp;define&nbsp;la&nbsp;clase&nbsp;<a href="#Persona">Persona</a>&nbsp;para&nbsp;gestionar&nbsp;información&nbsp;personal&nbsp;y&nbsp;métodos&nbsp;asociados.<br>
+&nbsp;<br>
+Incluye:<br>
+-&nbsp;Generación&nbsp;automática&nbsp;de&nbsp;DNI&nbsp;válido.<br>
+-&nbsp;Cálculo&nbsp;del&nbsp;índice&nbsp;de&nbsp;masa&nbsp;corporal&nbsp;(IMC).<br>
+-&nbsp;Comprobación&nbsp;de&nbsp;mayoría&nbsp;de&nbsp;edad.<br>
+-&nbsp;Métodos&nbsp;para&nbsp;modificar&nbsp;atributos&nbsp;de&nbsp;la&nbsp;persona.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="random.html">random</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="UD1_Python.Ejercicios.ejercicio07.html#Persona">Persona</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Persona">class <strong>Persona</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Persona">Persona</a>(nombre='',&nbsp;edad=0,&nbsp;sexo='H',&nbsp;peso=0.0,&nbsp;altura=0.0)<br>
+&nbsp;<br>
+Clase&nbsp;que&nbsp;representa&nbsp;a&nbsp;una&nbsp;persona&nbsp;con&nbsp;varios&nbsp;atributos&nbsp;y&nbsp;métodos&nbsp;para&nbsp;manipularlos.<br>
+Atributos:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__nombre&nbsp;(str):&nbsp;Nombre&nbsp;de&nbsp;la&nbsp;persona.&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__edad&nbsp;(int):&nbsp;Edad&nbsp;de&nbsp;la&nbsp;persona.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__dni&nbsp;(str):&nbsp;DNI&nbsp;de&nbsp;la&nbsp;persona,&nbsp;generado&nbsp;automáticamente.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__sexo&nbsp;(str):&nbsp;Sexo&nbsp;de&nbsp;la&nbsp;persona&nbsp;('H'&nbsp;para&nbsp;hombre,&nbsp;'M'&nbsp;para&nbsp;mujer).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__peso&nbsp;(float):&nbsp;Peso&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;kg.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;__altura&nbsp;(float):&nbsp;Altura&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;metros.<br>
+Métodos:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-calcularIMC">calcularIMC</a>():&nbsp;Calcula&nbsp;el&nbsp;índice&nbsp;de&nbsp;masa&nbsp;corporal&nbsp;(IMC)&nbsp;y&nbsp;devuelve&nbsp;un&nbsp;valor&nbsp;según&nbsp;el&nbsp;estado&nbsp;del&nbsp;peso.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-esMayorDeEdad">esMayorDeEdad</a>():&nbsp;Indica&nbsp;si&nbsp;la&nbsp;persona&nbsp;es&nbsp;mayor&nbsp;de&nbsp;edad.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-toString">toString</a>():&nbsp;Devuelve&nbsp;una&nbsp;representación&nbsp;en&nbsp;cadena&nbsp;de&nbsp;todos&nbsp;los&nbsp;atributos&nbsp;de&nbsp;la&nbsp;persona.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-setNombre">setNombre</a>(nombre):&nbsp;Establece&nbsp;el&nbsp;nombre&nbsp;de&nbsp;la&nbsp;persona.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-setEdad">setEdad</a>(edad):&nbsp;Establece&nbsp;la&nbsp;edad&nbsp;de&nbsp;la&nbsp;persona.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-setSexo">setSexo</a>(sexo):&nbsp;Establece&nbsp;el&nbsp;sexo&nbsp;de&nbsp;la&nbsp;persona.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-setPeso">setPeso</a>(peso):&nbsp;Establece&nbsp;el&nbsp;peso&nbsp;de&nbsp;la&nbsp;persona.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Persona-setAltura">setAltura</a>(altura):&nbsp;Establece&nbsp;la&nbsp;altura&nbsp;de&nbsp;la&nbsp;persona.<br>
+Constantes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HOMBRE&nbsp;(str):&nbsp;Constante&nbsp;para&nbsp;representar&nbsp;el&nbsp;sexo&nbsp;masculino.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MUJER&nbsp;(str):&nbsp;Constante&nbsp;para&nbsp;representar&nbsp;el&nbsp;sexo&nbsp;femenino.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IMC_BAJO&nbsp;(int):&nbsp;Constante&nbsp;para&nbsp;indicar&nbsp;bajo&nbsp;peso.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IMC_IDEAL&nbsp;(int):&nbsp;Constante&nbsp;para&nbsp;indicar&nbsp;peso&nbsp;ideal.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IMC_SOBREPESO&nbsp;(int):&nbsp;Constante&nbsp;para&nbsp;indicar&nbsp;sobrepeso.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Persona-__init__"><strong>__init__</strong></a>(self, nombre='', edad=0, sexo='H', peso=0.0, altura=0.0)</dt><dd><span class="code">Inicializa&nbsp;una&nbsp;nueva&nbsp;instancia&nbsp;de&nbsp;la&nbsp;clase&nbsp;<a href="#Persona">Persona</a>&nbsp;con&nbsp;los&nbsp;atributos&nbsp;proporcionados&nbsp;o&nbsp;sus&nbsp;valores&nbsp;por&nbsp;defecto.<br>
+El&nbsp;DNI&nbsp;se&nbsp;genera&nbsp;automáticamente&nbsp;al&nbsp;crear&nbsp;el&nbsp;objeto.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nombre&nbsp;(str):&nbsp;Nombre&nbsp;de&nbsp;la&nbsp;persona.&nbsp;Por&nbsp;defecto&nbsp;es&nbsp;una&nbsp;cadena&nbsp;vacía.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;edad&nbsp;(int):&nbsp;Edad&nbsp;de&nbsp;la&nbsp;persona.&nbsp;Por&nbsp;defecto&nbsp;es&nbsp;0.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sexo&nbsp;(str):&nbsp;Sexo&nbsp;de&nbsp;la&nbsp;persona&nbsp;('H'&nbsp;para&nbsp;hombre,&nbsp;'M'&nbsp;para&nbsp;mujer).&nbsp;Por&nbsp;defecto&nbsp;es&nbsp;'H'.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;peso&nbsp;(float):&nbsp;Peso&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;kg.&nbsp;Por&nbsp;defecto&nbsp;es&nbsp;0.0.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;altura&nbsp;(float):&nbsp;Altura&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;metros.&nbsp;Por&nbsp;defecto&nbsp;es&nbsp;0.0.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Persona-calcularIMC"><strong>calcularIMC</strong></a>(self)</dt><dd><span class="code">Calcula&nbsp;el&nbsp;índice&nbsp;de&nbsp;masa&nbsp;corporal&nbsp;(IMC)&nbsp;y&nbsp;devuelve&nbsp;un&nbsp;valor&nbsp;según&nbsp;el&nbsp;estado&nbsp;del&nbsp;peso.<br>
+Fórmula:&nbsp;IMC&nbsp;=&nbsp;peso&nbsp;/&nbsp;(altura^2)<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;-1&nbsp;si&nbsp;está&nbsp;por&nbsp;debajo&nbsp;del&nbsp;peso&nbsp;ideal,&nbsp;0&nbsp;si&nbsp;está&nbsp;en&nbsp;el&nbsp;peso&nbsp;ideal,&nbsp;1&nbsp;si&nbsp;tiene&nbsp;sobrepeso.<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Si&nbsp;la&nbsp;altura&nbsp;es&nbsp;menor&nbsp;o&nbsp;igual&nbsp;a&nbsp;cero.</span></dd></dl>
+
+<dl><dt><a name="Persona-esMayorDeEdad"><strong>esMayorDeEdad</strong></a>(self)</dt><dd><span class="code">Indica&nbsp;si&nbsp;la&nbsp;persona&nbsp;es&nbsp;mayor&nbsp;de&nbsp;edad.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;la&nbsp;persona&nbsp;es&nbsp;mayor&nbsp;de&nbsp;edad&nbsp;(edad&nbsp;&gt;=&nbsp;18),&nbsp;False&nbsp;en&nbsp;caso&nbsp;contrario.</span></dd></dl>
+
+<dl><dt><a name="Persona-getAltura"><strong>getAltura</strong></a>(self)</dt><dd><span class="code">Devuelve&nbsp;la&nbsp;altura&nbsp;de&nbsp;la&nbsp;persona.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;La&nbsp;altura&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;metros.</span></dd></dl>
+
+<dl><dt><a name="Persona-getEdad"><strong>getEdad</strong></a>(self)</dt><dd><span class="code">Devuelve&nbsp;la&nbsp;edad&nbsp;de&nbsp;la&nbsp;persona.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;La&nbsp;edad&nbsp;de&nbsp;la&nbsp;persona.</span></dd></dl>
+
+<dl><dt><a name="Persona-getNombre"><strong>getNombre</strong></a>(self)</dt><dd><span class="code">Devuelve&nbsp;el&nbsp;nombre&nbsp;de&nbsp;la&nbsp;persona.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;El&nbsp;nombre&nbsp;de&nbsp;la&nbsp;persona.</span></dd></dl>
+
+<dl><dt><a name="Persona-getPeso"><strong>getPeso</strong></a>(self)</dt><dd><span class="code">Devuelve&nbsp;el&nbsp;peso&nbsp;de&nbsp;la&nbsp;persona.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;El&nbsp;peso&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;kg.</span></dd></dl>
+
+<dl><dt><a name="Persona-getSexo"><strong>getSexo</strong></a>(self)</dt><dd><span class="code">Devuelve&nbsp;el&nbsp;sexo&nbsp;de&nbsp;la&nbsp;persona.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;El&nbsp;sexo&nbsp;de&nbsp;la&nbsp;persona&nbsp;('H'&nbsp;para&nbsp;hombre,&nbsp;'M'&nbsp;para&nbsp;mujer).</span></dd></dl>
+
+<dl><dt><a name="Persona-mostrar_info_persona"><strong>mostrar_info_persona</strong></a>(self)</dt><dd><span class="code">Muestra&nbsp;la&nbsp;información&nbsp;de&nbsp;una&nbsp;persona,&nbsp;incluyendo&nbsp;su&nbsp;estado&nbsp;de&nbsp;peso&nbsp;y&nbsp;si&nbsp;es&nbsp;mayor&nbsp;de&nbsp;edad.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;persona&nbsp;(<a href="#Persona">Persona</a>):&nbsp;Objeto&nbsp;<a href="#Persona">Persona</a>.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Persona-setAltura"><strong>setAltura</strong></a>(self, altura)</dt><dd><span class="code">Establece&nbsp;la&nbsp;altura&nbsp;de&nbsp;la&nbsp;persona.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;altura&nbsp;(float):&nbsp;La&nbsp;nueva&nbsp;altura&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;metros.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Persona-setEdad"><strong>setEdad</strong></a>(self, edad)</dt><dd><span class="code">Establece&nbsp;la&nbsp;edad&nbsp;de&nbsp;la&nbsp;persona.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;edad&nbsp;(int):&nbsp;La&nbsp;nueva&nbsp;edad&nbsp;de&nbsp;la&nbsp;persona.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Persona-setNombre"><strong>setNombre</strong></a>(self, nombre)</dt><dd><span class="code">Establece&nbsp;el&nbsp;nombre&nbsp;de&nbsp;la&nbsp;persona.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nombre&nbsp;(str):&nbsp;El&nbsp;nuevo&nbsp;nombre&nbsp;de&nbsp;la&nbsp;persona.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Persona-setPeso"><strong>setPeso</strong></a>(self, peso)</dt><dd><span class="code">Establece&nbsp;el&nbsp;peso&nbsp;de&nbsp;la&nbsp;persona.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;peso&nbsp;(float):&nbsp;El&nbsp;nuevo&nbsp;peso&nbsp;de&nbsp;la&nbsp;persona&nbsp;en&nbsp;kg.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Persona-setSexo"><strong>setSexo</strong></a>(self, sexo)</dt><dd><span class="code">Establece&nbsp;el&nbsp;sexo&nbsp;de&nbsp;la&nbsp;persona.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sexo&nbsp;(str):&nbsp;El&nbsp;nuevo&nbsp;sexo&nbsp;de&nbsp;la&nbsp;persona&nbsp;('H'&nbsp;para&nbsp;hombre,&nbsp;'M'&nbsp;para&nbsp;mujer).<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Persona-toString"><strong>toString</strong></a>(self)</dt><dd><span class="code">Devuelve&nbsp;una&nbsp;representación&nbsp;en&nbsp;cadena&nbsp;de&nbsp;todos&nbsp;los&nbsp;atributos&nbsp;de&nbsp;la&nbsp;persona.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Una&nbsp;cadena&nbsp;con&nbsp;toda&nbsp;la&nbsp;información&nbsp;de&nbsp;la&nbsp;persona.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>IMC_ALTO</strong> = 1</dl>
+
+<dl><dt><strong>IMC_BAJO</strong> = -1</dl>
+
+<dl><dt><strong>IMC_IDEAL</strong> = 0</dl>
+
+<dl><dt><strong>IMC_SOBREPESO</strong> = 1</dl>
+
+<dl><dt><strong>LETRAS_DNI</strong> = 'TRWAGMYFPDXBNJZSQVHLCKE'</dl>
+
+<dl><dt><strong>SEXO_HOMBRE</strong> = 'H'</dl>
+
+<dl><dt><strong>SEXO_MUJER</strong> = 'M'</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
