@@ -48,8 +48,15 @@ jobs:
 
       # 5. Ejecutar el linter para comprobar estilo y buenas prácticas
       - name: Run linter
-        run: python -m pylint $(find $PRACTICA/src -name "*.py")
+        run: |
+          FILES=$(find $PRACTICA/src -name "*.py" 2>/dev/null || true)
+          if [ -z "$FILES" ]; then
+            echo "No Python files found in $PRACTICA/src, skipping pylint"
+          else
+            python -m pylint $FILES
+          fi
 
       # 6. Ejecutar los tests oficiales con detalle (-v) y mostrando prints (-s)
       - name: Run tests
-        run: python -m pytest $PRACTICA/tests -v -s
+        run: |
+          PYTHONPATH=$PRACTICA/src pytest -v $PRACTICA/tests -s
