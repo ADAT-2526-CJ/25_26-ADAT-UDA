@@ -38,17 +38,18 @@ jobs:
           cp -r tmp_tests/$PRACTICA/tests/* ./tests/
 
       # 4. Instalar dependencias si hay
-      - name: Install dependencies
+      - name: Install dependencies from practice
         run: |
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
+          if [ -f $PRACTICA/requirements.txt ]; then
+            pip install -r $PRACTICA/requirements.txt
+          else
+            echo "No requirements.txt found for $PRACTICA"
           fi
-          pip install pytest
 
       # 5. Ejecutar el linter para comprobar estilo y buenas prácticas
       - name: Run linter
-        run: pylint src
+        run: pylint $PRACTICA/src
 
       # 6. Ejecutar los tests oficiales con detalle (-v) y mostrando prints (-s)
       - name: Run tests
-        run: pytest -v -s
+        run: pytest $PRACTICA/tests -v -s
