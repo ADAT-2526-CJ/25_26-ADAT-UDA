@@ -25,12 +25,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      # 3. Si estamos en el repo del alumno → bajar tests desde tu repo central
+      # 3. Si estamos en el repo del alumno: bajar tests desde tu repo central
       - name: Download official tests (only if not central repo)
-        if: github.repository != 'TU-USUARIO/${{ env.CENTRAL_REPO }}'
+        if: github.repository != 'ADAT-2526-CJ/25_26-ADAT-UDA'
         run: |
           echo "Descargando tests oficiales de $PRACTICA..."
-          git clone --depth 1 --filter=blob:none --sparse https://github.com/TU-USUARIO/${{ env.CENTRAL_REPO }} tmp_tests
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/ADAT-2526-CJ/25_26-ADAT-UDA tmp_tests
           cd tmp_tests
           git sparse-checkout set $PRACTICA/tests
           cd ..
