@@ -19,6 +19,86 @@ Incluye:<br>
 -&nbsp;Funciones&nbsp;para&nbsp;cifrar&nbsp;y&nbsp;descifrar&nbsp;textos.<br>
 -&nbsp;Funciones&nbsp;auxiliares&nbsp;para&nbsp;leer&nbsp;y&nbsp;escribir&nbsp;ficheros.<br>
 -&nbsp;Control&nbsp;de&nbsp;errores&nbsp;y&nbsp;codificación.<br>
--&nbsp;Ejemplo&nbsp;de&nbsp;uso&nbsp;en&nbsp;la&nbsp;función&nbsp;main().</span></p>
-
+-&nbsp;Ejemplo&nbsp;de&nbsp;uso&nbsp;en&nbsp;la&nbsp;función&nbsp;<a href="#-main">main</a>().</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="os.html">os</a><br>
+</td><td class="multicolumn"><a href="string.html">string</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-ajustar_clave"><strong>ajustar_clave</strong></a>(texto: str, clave: str) -&gt; str</dt><dd><span class="code">Ajusta&nbsp;la&nbsp;clave&nbsp;para&nbsp;que&nbsp;coincida&nbsp;con&nbsp;la&nbsp;longitud&nbsp;del&nbsp;texto.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texto&nbsp;(str):&nbsp;Texto&nbsp;a&nbsp;procesar.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clave&nbsp;(str):&nbsp;Clave&nbsp;de&nbsp;cifrado.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Clave&nbsp;ajustada.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Si&nbsp;la&nbsp;clave&nbsp;está&nbsp;vacía.</span></dd></dl>
+ <dl><dt><a name="-ajustar_clave_demo"><strong>ajustar_clave_demo</strong></a>(texto: str, clave: str) -&gt; str</dt><dd><span class="code">Ajusta&nbsp;la&nbsp;clave&nbsp;para&nbsp;que&nbsp;tenga&nbsp;la&nbsp;misma&nbsp;longitud&nbsp;que&nbsp;el&nbsp;texto.<br>
+Si&nbsp;la&nbsp;clave&nbsp;es&nbsp;más&nbsp;corta,&nbsp;se&nbsp;repite;&nbsp;si&nbsp;es&nbsp;más&nbsp;larga,&nbsp;se&nbsp;corta.</span></dd></dl>
+ <dl><dt><a name="-cifrar_vigenere"><strong>cifrar_vigenere</strong></a>(texto: str, clave: str) -&gt; str</dt><dd><span class="code">Cifra&nbsp;un&nbsp;texto&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;de&nbsp;Vigenère.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texto&nbsp;(str):&nbsp;Texto&nbsp;a&nbsp;cifrar.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clave&nbsp;(str):&nbsp;Clave&nbsp;de&nbsp;cifrado.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Texto&nbsp;cifrado.<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Si&nbsp;la&nbsp;clave&nbsp;está&nbsp;vacía.</span></dd></dl>
+ <dl><dt><a name="-descifrar_vigenere"><strong>descifrar_vigenere</strong></a>(texto_cifrado: str, clave: str) -&gt; str</dt><dd><span class="code">Descifra&nbsp;un&nbsp;texto&nbsp;cifrado&nbsp;con&nbsp;el&nbsp;algoritmo&nbsp;de&nbsp;Vigenère.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texto_cifrado&nbsp;(str):&nbsp;Texto&nbsp;cifrado&nbsp;a&nbsp;descifrar.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clave&nbsp;(str):&nbsp;Clave&nbsp;de&nbsp;cifrado&nbsp;usada.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Texto&nbsp;descifrado.<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Si&nbsp;la&nbsp;clave&nbsp;está&nbsp;vacía.</span></dd></dl>
+ <dl><dt><a name="-escribir_fichero"><strong>escribir_fichero</strong></a>(path: str, contenido: str) -&gt; None</dt><dd><span class="code">Escribe&nbsp;contenido&nbsp;en&nbsp;un&nbsp;fichero&nbsp;de&nbsp;texto&nbsp;usando&nbsp;UTF-8.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;(str):&nbsp;Ruta&nbsp;del&nbsp;fichero.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;contenido&nbsp;(str):&nbsp;Contenido&nbsp;a&nbsp;escribir.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+ <dl><dt><a name="-leer_fichero"><strong>leer_fichero</strong></a>(path: str) -&gt; str</dt><dd><span class="code">Lee&nbsp;el&nbsp;contenido&nbsp;de&nbsp;un&nbsp;fichero&nbsp;de&nbsp;texto.<br>
+Intenta&nbsp;primero&nbsp;en&nbsp;UTF-8&nbsp;y,&nbsp;si&nbsp;falla,&nbsp;usa&nbsp;latin-1.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;(str):&nbsp;Ruta&nbsp;del&nbsp;fichero.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Contenido&nbsp;del&nbsp;fichero&nbsp;o&nbsp;cadena&nbsp;vacía&nbsp;si&nbsp;hay&nbsp;error.</span></dd></dl>
+ <dl><dt><a name="-limpiar_texto"><strong>limpiar_texto</strong></a>(texto: str) -&gt; str</dt><dd><span class="code">Convierte&nbsp;a&nbsp;mayúsculas&nbsp;y&nbsp;elimina&nbsp;caracteres&nbsp;no&nbsp;alfabéticos.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texto&nbsp;(str):&nbsp;Texto&nbsp;a&nbsp;limpiar.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Texto&nbsp;limpio.</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Ejemplo&nbsp;de&nbsp;uso&nbsp;del&nbsp;cifrado&nbsp;Vigenère&nbsp;con&nbsp;consola&nbsp;y&nbsp;ficheros.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Si&nbsp;la&nbsp;clave&nbsp;está&nbsp;vacía.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;Para&nbsp;otros&nbsp;errores&nbsp;inesperados.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>BASE_DIR</strong> = '/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD1_Python/Practica_Vigenere/src'<br>
+<strong>CLAVE_DEMO</strong> = 'CLAVE'<br>
+<strong>DATA_DIR</strong> = '/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD1_Python/Practica_Vigenere/src/../data'<br>
+<strong>FILE_CIFRADO</strong> = '/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/...Practica_Vigenere/src/../data/mensaje_cifrado.txt'<br>
+<strong>FILE_DESCIFRADO</strong> = '/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/...ctica_Vigenere/src/../data/mensaje_descifrado.txt'<br>
+<strong>FILE_ORIGINAL</strong> = '/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD1_Python/Practica_Vigenere/src/../data/mensaje.txt'<br>
+<strong>TEXTO_DEMO</strong> = 'ATAQUE'</td></tr></table>
 </body></html>
