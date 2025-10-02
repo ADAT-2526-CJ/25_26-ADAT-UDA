@@ -3,7 +3,6 @@ UD0_Docker/
 UD0_Docker/*git 
 UD1_Python/ejercicios.py
 # - Practica_Vigenere -
-UD1_Python/Practica_Vigenere/src/vigenere.py
 UD1_Python/Practica_Vigenere/data/mensaje_descifrado.txt
 UD1_Python/Practica_Vigenere/data/mensaje_cifrado.txt
 

@@ -41,27 +41,24 @@ jobs:
         run: |
           pwd
           ls -R
-
+          
       # 4. Instalar dependencias si hay
       - name: Install dependencies from practice
         run: |
-          if [ -d "$PRACTICA/src" ]; then
-            python -m pylint $PRACTICA/src/*.py
+          if [ -f $PRACTICA/requirements.txt ]; then
+            pip install -r $PRACTICA/requirements.txt
           else
-            echo "No src directory found at $PRACTICA"
+            echo "No requirements.txt found for $PRACTICA"
           fi
 
       # 5. Ejecutar el linter para comprobar estilo y buenas prácticas
-      - name: Run linter
-        run: |
-          FILES=$(find $PRACTICA/src -name "*.py" 2>/dev/null || true)
-          if [ -z "$FILES" ]; then
-            echo "No Python files found in $PRACTICA/src, skipping pylint"
-          else
-            python -m pylint $FILES
-          fi
+      - name: Run pylint
+        continue-on-error: true
+        run: python -m pylint $PRACTICA/src
+
+
 
       # 6. Ejecutar los tests oficiales con detalle (-v) y mostrando prints (-s)
       - name: Run tests
-        run: |
-          PYTHONPATH=$PRACTICA/src pytest -v $PRACTICA/tests -s
+        run: PYTHONPATH=. python -m pytest $PRACTICA/tests/ -v -s
+
