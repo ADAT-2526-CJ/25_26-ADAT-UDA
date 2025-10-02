@@ -37,13 +37,18 @@ jobs:
           mkdir -p tests
           cp -r tmp_tests/$PRACTICA/tests/* ./tests/
 
+      - name: Debug repo contents
+        run: |
+          pwd
+          ls -R
+
       # 4. Instalar dependencias si hay
       - name: Install dependencies from practice
         run: |
-          if [ -f $PRACTICA/requirements.txt ]; then
-            pip install -r $PRACTICA/requirements.txt
+          if [ -d "$PRACTICA/src" ]; then
+            python -m pylint $PRACTICA/src/*.py
           else
-            echo "No requirements.txt found for $PRACTICA"
+            echo "No src directory found at $PRACTICA"
           fi
 
       # 5. Ejecutar el linter para comprobar estilo y buenas prácticas
