@@ -48,8 +48,8 @@ jobs:
 
       # 5. Ejecutar el linter para comprobar estilo y buenas prácticas
       - name: Run linter
-        run: pylint $PRACTICA/src
+        run: python -m pylint $PRACTICA/src
 
       # 6. Ejecutar los tests oficiales con detalle (-v) y mostrando prints (-s)
       - name: Run tests
-        run: pytest $PRACTICA/tests -v -s
+        run: python -m pytest $PRACTICA/tests -v -s
