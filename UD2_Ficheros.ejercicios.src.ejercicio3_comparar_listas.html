@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module UD2_Ficheros.ejercicios.src.ejercicio3_comparar_listas</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="UD2_Ficheros.html" class="white">UD2_Ficheros</a>.<a href="UD2_Ficheros.ejercicios.html" class="white">ejercicios</a>.<a href="UD2_Ficheros.ejercicios.src.html" class="white">src</a>.ejercicio3_comparar_listas</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD2_Ficheros/ejercicios/src/ejercicio3_comparar_listas.py">/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD2_Ficheros/ejercicios/src/ejercicio3_comparar_listas.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;para&nbsp;comparar&nbsp;listas&nbsp;guardadas.<br>
+&nbsp;<br>
+Este&nbsp;módulo&nbsp;carga&nbsp;listas&nbsp;guardadas&nbsp;con&nbsp;pickle&nbsp;y&nbsp;calcula<br>
+el&nbsp;promedio&nbsp;de&nbsp;las&nbsp;diferencias&nbsp;absolutas&nbsp;entre&nbsp;sus&nbsp;valores.<br>
+&nbsp;<br>
+Author:&nbsp;Urtzi&nbsp;Díaz<br>
+Version:&nbsp;1.2</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="logging.html">logging</a><br>
+</td><td class="multicolumn"><a href="pickle.html">pickle</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-calcular_promedio_diferencias"><strong>calcular_promedio_diferencias</strong></a>(archivo1: pathlib.Path = None, archivo2: pathlib.Path = None) -&gt; Optional[float]</dt><dd><span class="code">Calcula&nbsp;el&nbsp;promedio&nbsp;de&nbsp;diferencias&nbsp;entre&nbsp;las&nbsp;listas.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;archivo1:&nbsp;Ruta&nbsp;opcional&nbsp;del&nbsp;primer&nbsp;archivo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;archivo2:&nbsp;Ruta&nbsp;opcional&nbsp;del&nbsp;segundo&nbsp;archivo<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;Promedio&nbsp;de&nbsp;las&nbsp;diferencias<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None:&nbsp;Si&nbsp;hubo&nbsp;error&nbsp;en&nbsp;el&nbsp;proceso</span></dd></dl>
+ <dl><dt><a name="-cargar_lista"><strong>cargar_lista</strong></a>(archivo: pathlib.Path) -&gt; Optional[List[float]]</dt><dd><span class="code">Carga&nbsp;una&nbsp;lista&nbsp;desde&nbsp;un&nbsp;archivo&nbsp;pickle.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;archivo:&nbsp;Ruta&nbsp;del&nbsp;archivo&nbsp;a&nbsp;cargar<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List[float]:&nbsp;Lista&nbsp;cargada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None:&nbsp;Si&nbsp;hubo&nbsp;error&nbsp;al&nbsp;cargar</span></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Función&nbsp;principal.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>ARCHIVO_LISTA1</strong> = 'lista1.pkl'<br>
+<strong>ARCHIVO_LISTA2</strong> = 'lista2.pkl'<br>
+<strong>BASE_DIR</strong> = PosixPath('/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD2_Ficheros/ejercicios')<br>
+<strong>DATA_DIR</strong> = PosixPath('/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD2_Ficheros/ejercicios/data')<br>
+<strong>LOG_DIR</strong> = PosixPath('/home/runner/work/25_26-ADAT-UDA/25_26-ADAT-UDA/UD2_Ficheros/ejercicios/logs')<br>
+<strong>List</strong> = typing.List<br>
+<strong>Optional</strong> = typing.Optional<br>
+<strong>Tuple</strong> = typing.Tuple</td></tr></table>
+</body></html>
