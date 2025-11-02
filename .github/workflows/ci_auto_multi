@@ -1,0 +1,103 @@
+name: CI - Multiple projects (lint + tests)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Lint por proyecto (pylint, no bloqueante)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [
+          "UD1_Python/Practica_Vigenere",
+          "UD2_Ficheros/ejercicios"
+        ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pylint
+        run: pip install pylint
+
+      - name: Run pylint (skip tests folders; non-fatal)
+        env:
+          PROJECT: ${{ matrix.project }}
+        run: |
+          slug=${PROJECT//\//_}
+          src_dir="$PROJECT/src"
+          if [ -d "$src_dir" ]; then
+            echo "Running pylint for $src_dir -> pylint-$slug.txt"
+            python -m pylint "$src_dir" --ignore-patterns=".*[\\/](test|tests)([\\/].*)?" > "pylint-$slug.txt" || true
+          else
+            echo "No src directory at $src_dir, skipping pylint"
+            echo "No src" > "pylint-$slug.txt"
+          fi
+
+      - name: Upload pylint report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pylint-report-${{ matrix.project }}
+          path: pylint-*.txt
+
+  tests:
+    name: Tests por proyecto (pytest)
+    needs: lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [
+          "UD1_Python/Practica_Vigenere",
+          "UD2_Ficheros/ejercicios"
+        ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install test deps
+        env:
+          PROJECT: ${{ matrix.project }}
+        run: |
+          slug=${PROJECT//\//_}
+          REQ="$PROJECT/requirements.txt"
+          if [ -f "$REQ" ]; then
+            echo "Installing requirements from $REQ"
+            pip install -r "$REQ"
+          else
+            echo "No requirements.txt for $PROJECT"
+          fi
+          pip install pytest pytest-cov
+
+      - name: Run pytest (produce JUnit XML)
+        env:
+          PROJECT: ${{ matrix.project }}
+        run: |
+          slug=${PROJECT//\//_}
+          tests_dir="$PROJECT/tests"
+          mkdir -p test-reports
+          if [ -d "$tests_dir" ]; then
+            echo "Running pytest for $tests_dir -> test-reports/junit-$slug.xml"
+            PYTHONPATH="$PROJECT/src" python -m pytest "$tests_dir" -v -s \
+              --junitxml="test-reports/junit-$slug.xml" --maxfail=1 || true
+          else
+            echo "No tests dir at $tests_dir, skipping pytest" > test-reports/junit-$slug.xml
+          fi
+
+      - name: Upload pytest reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-reports-${{ matrix.project }}
+          path: test-reports
