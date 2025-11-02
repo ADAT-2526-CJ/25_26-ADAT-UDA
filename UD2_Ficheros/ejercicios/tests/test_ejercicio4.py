@@ -15,7 +15,7 @@ from ejercicio4_crear_bd_libros import guardar_libros, Libro
 from ejercicio4_analizar_descuentos import cargar_libros, libro_mayor_descuento
 
 @pytest.fixture
-def ejemplo_libros():
+def ejemplo_libros():   # <-- corregido: añadir () y :
     return [
         Libro(
             nombre="Libro 1",

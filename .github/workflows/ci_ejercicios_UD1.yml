@@ -1,4 +1,4 @@
-name: CI for UD1_Python/Ejercicios
+name: CI for UD1_Python_Ejercicios
 
 on:
   push:

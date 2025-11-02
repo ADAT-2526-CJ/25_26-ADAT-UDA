@@ -1,4 +1,4 @@
-name: CI for Practica_Vigenere  
+name: CI for UD1_Practica_Vigenere
 
 on:
   push:

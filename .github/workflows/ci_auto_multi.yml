@@ -29,10 +29,12 @@ jobs:
         run: pip install pylint
 
       - name: Run pylint (skip tests folders; non-fatal)
+        id: lint
         env:
           PROJECT: ${{ matrix.project }}
         run: |
           slug=${PROJECT//\//_}
+          echo "slug=$slug" >> $GITHUB_OUTPUT
           src_dir="$PROJECT/src"
           if [ -d "$src_dir" ]; then
             echo "Running pylint for $src_dir -> pylint-$slug.txt"
@@ -45,8 +47,9 @@ jobs:
       - name: Upload pylint report
         uses: actions/upload-artifact@v4
         with:
-          name: pylint-report-${{ matrix.project }}
+          name: pylint-report-${{ steps.lint.outputs.slug }}
           path: pylint-*.txt
+          if-no-files-found: warn
 
   tests:
     name: Tests por proyecto (pytest)
@@ -67,11 +70,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install test deps
+      - name: Install test dependencies
         env:
           PROJECT: ${{ matrix.project }}
         run: |
           slug=${PROJECT//\//_}
+          echo "slug=$slug" >> $GITHUB_ENV
           REQ="$PROJECT/requirements.txt"
           if [ -f "$REQ" ]; then
             echo "Installing requirements from $REQ"
@@ -99,5 +103,6 @@ jobs:
       - name: Upload pytest reports
         uses: actions/upload-artifact@v4
         with:
-          name: pytest-reports-${{ matrix.project }}
+          name: pytest-reports-${{ needs.lint.outputs.slug }}
           path: test-reports
+          if-no-files-found: warn
