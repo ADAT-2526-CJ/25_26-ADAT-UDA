@@ -1,4 +1,4 @@
 {'nombre': 'wer', 'autor': 'wer', 'precio': 33.0, 'precio_descuento': 3.0, 'paginas': 234}
 {'nombre': '4234', 'autor': '234', 'precio': 23.0, 'precio_descuento': 1.0, 'paginas': 344}
-{'nombre': 'sdf', 'autor': 'sdf', 'precio': 333.0, 'precio_descuento': 3.0, 'paginas': 2}
+{'nombre': 'sdf', 'autor': 'sdf', 'precio': 333.0, 'precio_descuento': 3.0, 'paginas': 2}s
 {'nombre': 'erwer', 'autor': '324', 'precio': 3.0, 'precio_descuento': 2.0, 'paginas': 3}

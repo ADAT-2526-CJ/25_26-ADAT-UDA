@@ -73,9 +73,11 @@ build/
 dist/
 *.egg-info/
 
+# - UD2_Ficheros -
 UD2_Ficheros/ejercicios/data/fitxategi2.txt
 UD2_Ficheros/ejercicios/src/ejercicio2.py
 UD2_Ficheros/ejercicios/src/ejercicio4.py
 UD2_Ficheros/ejercicios/data/lista1.pkl
 UD2_Ficheros/ejercicios/data/lista2.pkl
 UD2_Ficheros/ejercicios/src/ejercicio3.py
+UD2_Ficheros/ejercicios/data/libros.txt

@@ -98,12 +98,3 @@ A continuación se resumen las convenciones y decisiones que se han aplicado en 
 - Añadir modo no interactivo (flags/params) para permitir automatización y pruebas.
 
 ---
-
-## Notas finales
-- Si deseas que el proyecto sea instalable/importable como paquete, convertir `src/` en paquete (añadir `__init__.py`) y ajustar los imports en tests.
-- Indica si quieres que aplique automáticamente:
-  - renombrado de ficheros (guiones -> guiones_bajos),
-  - creación de `logs/` / `data/` en todos los scripts,
-  - y/o integración de `ignore-patterns` en `.pylintrc`.
-
-¿Quieres que actualice el README con un apartado de "Cómo contribuir" o que aplique alguno de los cambios automáticos listados?
