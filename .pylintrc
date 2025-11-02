@@ -7,13 +7,16 @@
 [MASTER]
 # Desactiva todo por defecto
 disable=all
-ignore=tests,UD0_Docker
+ignore=tests,UD0_Docker,test
 # Activamos únicamente lo que nos interesa
 enable=
     missing-docstring,
     unused-variable,
     undefined-variable,
     pointless-statement,
+
+# Ignorar cualquier ruta que incluya /test o /tests (funciona en Windows y Unix)
+ignore-patterns=.*[\\/](test|tests)([\\/].*)?
 
 [MESSAGES CONTROL]
 # missing-docstring se desglosa en:

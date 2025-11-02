@@ -1,0 +1,5 @@
+Python es un lenguaje de programación poderoso y sencillo.
+Los archivos de texto son una forma común de almacenar información.
+Cada línea puede contener palabras separadas por espacios.
+Este ejercicio sirve para practicar la lectura y escritura de archivos.
+La selección aleatoria de palabras añade un toque divertido.
