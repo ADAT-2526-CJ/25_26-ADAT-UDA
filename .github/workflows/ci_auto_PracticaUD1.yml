@@ -2,9 +2,9 @@ name: CI for UD1_Practica_Vigenere
 
 on:
   push:
-    branches: [ main ]
+#    branches: [ main ]
   pull_request:
-    branches: [ main ]
+#    branches: [ main ]
 
 
 jobs:

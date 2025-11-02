@@ -16,6 +16,7 @@ jobs:
           "UD1_Python/Practica_Vigenere",
           "UD2_Ficheros/ejercicios"
         ]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -51,6 +52,7 @@ jobs:
           path: pylint-*.txt
           if-no-files-found: warn
 
+
   tests:
     name: Tests por proyecto (pytest)
     needs: lint
@@ -61,6 +63,7 @@ jobs:
           "UD1_Python/Practica_Vigenere",
           "UD2_Ficheros/ejercicios"
         ]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -71,11 +74,12 @@ jobs:
           python-version: '3.11'
 
       - name: Install test dependencies
+        id: setup
         env:
           PROJECT: ${{ matrix.project }}
         run: |
           slug=${PROJECT//\//_}
-          echo "slug=$slug" >> $GITHUB_ENV
+          echo "slug=$slug" >> $GITHUB_OUTPUT
           REQ="$PROJECT/requirements.txt"
           if [ -f "$REQ" ]; then
             echo "Installing requirements from $REQ"
@@ -103,6 +107,6 @@ jobs:
       - name: Upload pytest reports
         uses: actions/upload-artifact@v4
         with:
-          name: pytest-reports-${{ needs.lint.outputs.slug }}
+          name: pytest-reports-${{ steps.setup.outputs.slug }}
           path: test-reports
           if-no-files-found: warn
